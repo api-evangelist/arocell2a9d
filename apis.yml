@@ -1,23 +1,72 @@
 aid: arocell2a9d
+
 name: Arocell2a9d
-description: 'Arocell2a9d is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Arocell2a9d, operating under the brand AROCELLUS, is a Korean‑origin beauty and lifestyle e‑commerce company offering premium skincare, cosmetics, jewelry and fashion items. The Shopify‑powered site showcases a range of products such as serums, cleansers, masks, and accessories, emphasizing advanced bio‑formulations and natural ingredients. It provides free shipping in the U.S. over $75 and maintains policies for refunds, privacy, and terms of service.'
+
 url: https://raw.githubusercontent.com/api-evangelist/arocell2a9d/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Beauty
+- E-commerce
+- Skincare
+- Lifestyle
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/arocell2a9d-llms.txt
+- type: WellKnown
+  url: well-known/arocell2a9d-well-known.yml
+- type: Hosts
+  url: hosts/arocell2a9d-hosts.yml
+- type: Vendors
+  url: vendors/arocell2a9d-vendors.yml
+- type: TermsOfService
+  url: https://arocellus.com/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://arocellus.com/policies/privacy-policy
+- type: Newsroom
+  url: https://arocellus.com/blogs/news
+- type: DomainSecurity
+  url: security/arocell2a9d-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/arocell2a9d
+  url: https://arocellus.com
+
+# Coverage block for no owned contract
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: GraphQL endpoint exists but schema is generic Shopify and not owned by Arocell.
+  evidence:
+    - url: https://arocellus.com/api/graphql
+      status: 200
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 10
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
